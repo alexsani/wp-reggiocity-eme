@@ -15,4 +15,15 @@ jQuery(document).ready( function() {
         jQuery("#div_event_registration_pending_email_body").appendTo("#div_event_page_advances_option .inside");
         jQuery("#div_event_registration_form_format").appendTo("#div_event_page_advances_option .inside");
     }
+    
+    
+    /* Hack per IE7 che non visualizza correttamente i filtri nella sezione admin */
+    
+    jQuery('select[name="scope"]').css('float', 'none');
+    jQuery('select[name="event_status"]').css('float', 'none');
+    jQuery('select[name="category"]').css('float', 'none');
+
+    /* Fine hack per IE7 */
+    
+    
 });
