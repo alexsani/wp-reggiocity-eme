@@ -1,0 +1,298 @@
+/* Il Widget per la lista degli eventi deve avere il seguente
+   formato:
+  
+<ul class="widget_eme_list">
+    <li>
+        <p class="calendar_icon">#j <em>#M #y</em></p>
+        <p class="event_desc">
+        #_LINKEDNAME
+        <br />
+        #_TOWN
+        </p>
+    </li>
+</ul>
+
+*/
+
+/* Calendario */
+
+.eme-calendar,
+.eme-calendar-full{
+    position:relative;
+    padding:2px;
+    width:100%;
+    background:#121212;
+    text-align:center;
+    border:1px solid #0a0a0a;
+    border-radius:2px;
+    background-color:#2d2d2d;
+    background-image:linear-gradient(top,#222 11%,#2d2d2d 10%,#222 10%);
+    background-image:-o-linear-gradient(top,#222 11%,#2d2d2d 10%,#222 10%);
+    background-image:-moz-linear-gradient(top,#222 11%,#2d2d2d 10%,#222 10%);
+    background-image:-webkit-linear-gradient(top,#222 11%,#2d2d2d 10%,#222 10%);
+    background-image:-ms-linear-gradient(top,#222 11%,#2d2d2d 10%,#222 10%);
+    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0.11,#222),color-stop(0.1,#2d2d2d),color-stop(0.1,#222));
+    font-family:sans-serif;
+    -moz-box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a;
+    -webkit-box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a;
+    box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a}
+    
+.eme-calendar ul,
+.eme-calendar-full ul{
+    list-style: none;
+    list-style-image: none;}
+
+.eme-calendar table,
+.eme-calendar-full table{
+    width:100%;
+    background:#f4f4f4;
+    border-radius:0;
+    -webkit-box-shadow:0 0 0 1px black,0 0 0 2px #3d3d3d,0 2px 0 0 #646464;
+    -moz-box-shadow:0 0 0 1px black,0 0 0 2px #3d3d3d,0 2px 0 0 #646464;
+    box-shadow:0 0 0 1px black,0 0 0 2px #3d3d3d,0 2px 0 0 #646464;
+    border-spacing:0;
+    border-collapse:collapse}
+    
+.eme-calendar table thead,
+.eme-calendar-full table thead{
+    font-style:italic;
+    color:#5b5754;
+    text-shadow:0 1px 0 #ebebeb;
+    font-weight:normal;
+    font-size:12px;
+    border-top:1px solid #fcfcfc;
+    background-color:#f5f5f5;
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#dadada));
+    background-image:-webkit-linear-gradient(top,#f5f5f5,#dadada);
+    background-image:-moz-linear-gradient(top,#f5f5f5,#dadada);
+    background-image:-o-linear-gradient(top,#f5f5f5,#dadada);
+    background-image:linear-gradient(to bottom,#f5f5f5,#dadada);
+    padding-bottom: 10px;
+    border-right: 1px solid #C5C5C5;}
+    
+.eme-calendar table thead tr .month_name,
+.eme-calendar-full table thead tr .month_name{
+    line-height: 28px;
+    font-weight: bold;
+    font-size: 120%;
+}
+    
+.eme-calendar table thead tr,
+.eme-calendar-full table thead tr{
+    padding:10px 5px;
+    color:#787573;
+    border-bottom:1px solid #c5c5c5}
+    
+.eme-calendar table tbody td,
+.eme-calendar-full table tbody td{
+    text-align:center;
+    padding:5px 5px;
+    font-size:13px;
+    color:#4c5359;
+    border-top:1px solid #fcfcfc;
+    border-bottom:1px solid #c5c5c5;
+    border-right:1px solid #c5c5c5;
+    text-shadow:0 1px 0 #fff;
+    background-color:#f5f5f5;
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#dadada));
+    background-image:-webkit-linear-gradient(top,#f5f5f5,#dadada);
+    background-image:-moz-linear-gradient(top,#f5f5f5,#dadada);
+    background-image:-o-linear-gradient(top,#f5f5f5,#dadada);
+    background-image:linear-gradient(to bottom,#f5f5f5,#dadada)}
+    
+.eme-calendar table tbody td.eventless-today,
+.eme-calendar table tbody td.eventfull-today,
+.eme-calendar table tbody td.eventful-today,
+.eme-calendar-full table tbody td.eventless-today,
+.eme-calendar-full table tbody td.eventfull-today,
+.eme-calendar-full table tbody td.eventful-today{
+    color:#fff;
+    text-shadow:0 1px 0 #3775b1;
+    background-color:#6eb8f3;
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#6eb8f3),to(#388be8));
+    background-image:-webkit-linear-gradient(top,#6eb8f3,#388be8);
+    background-image:-moz-linear-gradient(top,#6eb8f3,#388be8);
+    background-image:-o-linear-gradient(top,#6eb8f3,#388be8);
+    background-image:linear-gradient(to bottom,#6eb8f3,#388be8);
+    -moz-box-shadow:inset 0 1px 0 #4c9adb;
+    -webkit-box-shadow:inset 0 1px 0 #4c9adb;
+    box-shadow:inset 0 1px 0 #4c9adb;
+    border-top:1px solid #287cc2;
+    border-bottom:1px solid #287cc2}
+    
+.eme-calendar table tbody td.eventful,
+.eme-calendar table tbody td.eventful-post,
+.eme-calendar-full table tbody td.eventful,
+.eme-calendar-full table tbody td.eventful-post{
+    margin:-3px -10px ;
+    text-decoration:none;
+    color:#4c5359;
+    text-shadow:0 1px 0 #fff;
+    background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTE0NDk5NjVFNUJFMTFFMThDMUZBNTJFNEU4NjlBOUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTE0NDk5NjZFNUJFMTFFMThDMUZBNTJFNEU4NjlBOUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBMTQ0OTk2M0U1QkUxMUUxOEMxRkE1MkU0RTg2OUE5RCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBMTQ0OTk2NEU1QkUxMUUxOEMxRkE1MkU0RTg2OUE5RCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkhY7jEAAAC7SURBVHjaYvz//z8DCPCmbdRlZmLyBjK///n7b82X2f5PGUGSQllbQ7g42JaysbKygfg/f/3++O3HLwdGgYzNnPw8XE/4eLiEONnZGEAGffvxk+Hjl68HWdhZWSV4uDiFgJIMEMn/DMzMTAx//v41YAIyXrCyML9jY2FhYGWFYDYgZmFhvsD0tN/1++8/f3N//fnz6/fvPwwg/Ov3n49//vwtYIS5Vq/xhC7QWD8g9zvQzpVXGi2fAgQYAKLEVU4DlINwAAAAAElFTkSuQmCC') no-repeat top right;}
+
+.eme-calendar .eme-calendar-table .prev-month,
+.eme-calendar .eme-calendar-table .next-month,
+.eme-calendar-full .eme-calendar-table .prev-month,
+.eme-calendar-full .eme-calendar-table .next-month{
+    background:0;
+    display:block;
+    margin:0;
+    padding:0}
+
+.eme-calendar .eme-calendar-table .prev-month,
+.eme-calendar-full .eme-calendar-table .prev-month{
+    position:absolute;
+    left:10px;
+    padding:5px;
+    top:7px;
+    text-indent:-9999px;
+    border:0;
+    background-color:#151515;
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#151515),to(#4d4d4d));
+    background-image:-webkit-linear-gradient(top,#151515,#4d4d4d);
+    background-image:-moz-linear-gradient(top,#151515,#4d4d4d);
+    background-image:-o-linear-gradient(top,#151515,#4d4d4d);
+    background-image:linear-gradient(to bottom,#151515,#4d4d4d);
+    height:22px;
+    width:21px;
+    margin:-1px;
+    display:block;
+    background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAWCAYAAAAvg9c4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTE0NDk5NjlFNUJFMTFFMThDMUZBNTJFNEU4NjlBOUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTE0NDk5NkFFNUJFMTFFMThDMUZBNTJFNEU4NjlBOUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBMTQ0OTk2N0U1QkUxMUUxOEMxRkE1MkU0RTg2OUE5RCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBMTQ0OTk2OEU1QkUxMUUxOEMxRkE1MkU0RTg2OUE5RCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pgb0DCkAAAL7SURBVHjalJVLa1NBFMfnTvNoDXVhQ9JK84SmLfkAUiuC4EKE6Lb5AFl0KUEQIxbERcGFdJVN1q1bQcSdG5PgptuWFNomKcYIcZOkzTv+/5c7YfoideBkwsw5vzlz5pxzjeFwKMaNcDi8rP4fHh7ujdM3roKGQiE7pueQR5B7MzMzo71arcbpJ+Q75PPR0VF3LDQYDN7H9HJhYcE3Pz8vvF6v0HUMwxDValWcnJyIg4ODMpY+HB8f566FBgKBOKYXq6urkrDBYGAKB/UI5JBSmkJ4NpulwsdisbhzCerz+Z74/f73kUhETE1NiV6vJ/r9/jmwDpyYmBA2m02cnZ2JQqEgSqXSm3K5/G0ExTV9+P9pZWXFOT09Lbrd7jnoxevrULvdLur1usjn821sryEsZRsVYbi+tLTkxBDNZvO/obTDDZ37+/vrUHktZzFg+NjtdotGo2GeqoQHULBuLC4u3k6n08tYl1zT9WhHe3KA89jgxYO5uTl5enoq2u226HQ6Iy/pIRSNeDzuicVid7gGoHQ4HAN6rLxVNwNQViqVhzYYRbjB03UogRBjY2PDH41GbxHIgYeR6uEI1qH8b/Lw46ESoQRSCATE2NraCiHNnDTiGmOp9lUmKCcoVqZ4zFO5QS9brZZ5qgWXiUSisru721F5Sm9pTB2lx5l26pbkEVpTMHWideoAoH4ymaxub283VeITrETXV3CY/SF0jwmse2A9FJjDLmDtTCZTS6VSf/kwV8GUDTngFQyXyzWLAH9h09AfSS9lKErAHFiX0G0jlj09b/lAyAiWLV/wmUSO/QbsB/NNlaR+RctjplAHsBbDou8rG+Yq5hx5ZplOTk4GWKYoUbtVYeImfVZVFwecYgtcQ1yLo4aCUnuKK7xj3KwcvRGUQo9x27fIgK+XWh/q2Gx9OECq174Kru8BZLY+PNbOtU0aQWeTfoX5Lq9GwMWGYpUvH/UXljYx58Z+ThCCc58TFTcVb/1zgqt3b/SNujgAXdagYz98/wQYACCHtlKmbkYmAAAAAElFTkSuQmCC') no-repeat;}
+
+.eme-calendar .eme-calendar-table .next-month,
+.eme-calendar-full .eme-calendar-table .next-month{
+    position:absolute;
+    top:7px;
+    right:10px;
+    text-indent:-9999px;
+    border:0;
+    background:0;
+    height:22px;
+    width:21px;
+    background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAWCAYAAAAvg9c4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTMzRUZEMkNFNUMwMTFFMThDMUZBNTJFNEU4NjlBOUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTMzRUZEMkRFNUMwMTFFMThDMUZBNTJFNEU4NjlBOUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBMTQ0OTk2QkU1QkUxMUUxOEMxRkE1MkU0RTg2OUE5RCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBMTQ0OTk2Q0U1QkUxMUUxOEMxRkE1MkU0RTg2OUE5RCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PlPvqksAAAMMSURBVHjalFW7T1pRGD/3cpGH0aEY0UZESOTxD9hY2qFJB8NQFwf7Jzh2aAJN04SmQ41DRzdH7Nqkabp1KY8uMEowUQHTahNc5P3s73fDIRfUYE/y8R3O+b7f9zzfVfr9vpi0vF5vUO5PTk6OJskrt4F6PB4z2CboGeiRw+EY3pXLZbJfoB+gL6enp+2JoCsrK4/BXq+urrqWlpaE0+kURhlFUcTl5aU4Pz8Xx8fHJRztnZ2dJe8EdbvdL8FehUIhlWC9Xk8nLsoRkEtVVZ0InkgkKPCpUCgc3gB1uVwby8vLH3w+n7DZbKLT6YhutzsCbAQ0mUxC0zRRr9dFPp8XxWLxbalU+j4ERZgu7D+vr69bZmZmRLvdHgEdD98IajabxfX1tUilUk1cbyMtJY2CUNwJBAIWLFGtVv8blHqI0JLL5XYg8kZdwILi87m5OVGpVHSrkmgAXN3f3w/6/f5Z3Cs8G5wPiXrUJw7g5k3T09Mbi4uLT5lH5qfRaIhmsylarZbuMf6btra2HGtra7PwTs1mszVGICMxRgOuwEhJw8bHMGhdglFBhowzlf+5wuHwA3SINRaLFZGGPlNBXZku7omn4meelghaq9V0Ijg9Jkkj0vNgMGjf3d31ICqFclKH+oNOmaenugLDoNB4cWSYskiZTKYViUT+wCsV6eiyaFJe6hK0TI+mpqZGKi6XETAej1cPDg6uANiFTI9ABJWczuH4L0GPEMomDxkeQYwtxP9sn2g0epVOpyvYt3DfwXlfGqMT1Gehsc8rqP4CLH/l0Bgv0qCHNZxZoNwjIJQZRt/YtywQI8Wz5d0LDT12Ybfbf6IVnrCRx58lDPQA1JB76aHx2VKevQqeRNEu9GdqtVrdfKZ4ouaBd+I+c1a+Li44xRG4jfoUhgMFTy2MEN4zfzy7LyiJeUfq3qF7vt0YfQhfH30woMoxdxu48Q5A+uhDkQ/vHNJIOod0BPwhQyPA+EAZPEkW9TeOPoInJ35OkIKRz4nMm8y38XOC0Nv3+kaNL4AGDaATP3z/BBgA2cB5JaEpx08AAAAASUVORK5CYII=') no-repeat;}
+
+table.eme-calendar-table td.eventful a,
+table.eme-calendar-table td.eventful-today a,
+table.eme-calendar-table td.eventful-post a{
+    font-weight: bold;
+    color: #FD7E29;
+}
+
+.eme-calendar table tbody td.eventless-pre,
+.eme-calendar table tbody td.eventless-post,
+.eme-calendar table tbody td.eventfull-pre,
+.eme-calendar table tbody td.eventfull-post,
+.eme-calendar-full .eme-calendar table tbody td.eventless-pre,
+.eme-calendar-full .eme-calendar table tbody td.eventless-post,
+.eme-calendar-full .eme-calendar table tbody td.eventfull-pre,
+.eme-calendar-full .eme-calendar table tbody td.eventfull-post{
+    font-weight: normal;
+    color: #C8C8C8;
+}
+
+/* Fine Calendario */
+
+
+/* Widget Lista Eventi */
+
+#main .widget_eme_list {
+    width: 100;
+}
+
+#main ul.widget_eme_list{
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.widget_eme_list li{
+    clear: both;}
+    
+
+    
+#main ul.widget_eme_list li p.calendar_icon{
+	margin:.25em 10px 10px 0;
+	padding-top:5px;
+	float:left;
+	width:55px;
+	background:#ededef;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#ccc)); 
+	background: -moz-linear-gradient(top,  #ededef,  #ccc); 
+	font-weight:bold;
+    font-size: 1.5em;
+    font-style: normal;
+    line-height: 40px; 
+	text-align:center;
+	color:#000;
+	text-shadow:#fff 0 1px 0;	
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;	
+	position:relative;
+	-moz-box-shadow:0 2px 2px #888;
+	-webkit-box-shadow:0 2px 2px #888;
+	box-shadow:0 2px 2px #888;
+    padding-bottom: 0;
+	}
+    
+#main ul.widget_eme_list li p.calendar_icon em{
+	display: block;
+    font-weight: bold;
+    font-size: .7em;
+    font-style: normal;
+    line-height: 25px; 
+	color:#fff;
+	text-shadow:#00365a 0 -1px 0;	
+	background:#04599a;
+	background:-webkit-gradient(linear, left top, left bottom, from(#04599a), to(#00365a)); 
+	background:-moz-linear-gradient(top,  #04599a,  #00365a); 
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;	
+	border-bottom-right-radius:3px;
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;	
+	border-bottom-left-radius:3px;	
+	border-top:1px solid #00365a;
+	}
+    
+#main ul.widget_eme_list li p.calendar_icon:before,
+#main ul.widget_eme_list li p.calendar_icon:after{
+	content:'';
+	float:left;
+	position:absolute;
+	top:5px;	
+	width:8px;
+	height:8px;
+	background:#111;
+	z-index:1;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	-moz-box-shadow:0 1px 1px #fff;
+	-webkit-box-shadow:0 1px 1px #fff;
+	box-shadow:0 1px 1px #fff;
+	}
+#main ul.widget_eme_list li p.calendar_icon:before{left:11px;}	
+#main ul.widget_eme_list li p.calendar_icon:after{right:11px;}
+
+#main ul.widget_eme_list li p.calendar_icon em:before,
+#main ul.widget_eme_list li p.calendar_icon em:after{
+	content:'';
+	float:left;
+	position:absolute;
+	top:-5px;	
+	width:4px;
+	height:14px;
+	background:#dadada;
+	background:-webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#aaa)); 
+	background:-moz-linear-gradient(top,  #f1f1f1,  #aaa); 
+	z-index:2;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	}
+#main ul.widget_eme_list li p.calendar_icon em:before{left:13px;}	
+#main ul.widget_eme_list li p.calendar_icon em:after{right:13px;}
+
+/* Fine Widget Lista Eventi */
