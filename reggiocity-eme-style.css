@@ -39,6 +39,10 @@
     -moz-box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a;
     -webkit-box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a;
     box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a}
+
+
+
+
     
 .eme-calendar ul,
 .eme-calendar-full ul{
@@ -213,21 +217,21 @@ table.eme-calendar-table td.eventful-post a:visited{
     width: 100;
 }
 
-#main ul.widget_eme_list{
+#sidebar ul.widget_eme_list{
     list-style: none;
     list-style-image: none;
     margin: 0;
     padding: 0;
 }
 
-ul.widget_eme_list li{
+#sidebar ul.widget_eme_list li{
     clear: both;}
     
 
     
-#main ul.widget_eme_list li p.calendar_icon{
+#sidebar ul.widget_eme_list li p.calendar_icon{
 	margin:.25em 10px 10px 0;
-	padding-top:5px;
+	padding:5px 0 0 0;
 	float:left;
 	width:55px;
 	background:#ededef;
@@ -250,7 +254,7 @@ ul.widget_eme_list li{
     padding-bottom: 0;
 	}
     
-#main ul.widget_eme_list li p.calendar_icon em{
+#sidebar ul.widget_eme_list li p.calendar_icon em{
 	display: block;
     font-weight: bold;
     font-size: .7em;
@@ -270,8 +274,8 @@ ul.widget_eme_list li{
 	border-top:1px solid #00365a;
 	}
     
-#main ul.widget_eme_list li p.calendar_icon:before,
-#main ul.widget_eme_list li p.calendar_icon:after{
+#sidebar ul.widget_eme_list li p.calendar_icon:before,
+#sidebar ul.widget_eme_list li p.calendar_icon:after{
 	content:'';
 	float:left;
 	position:absolute;
@@ -287,11 +291,11 @@ ul.widget_eme_list li{
 	-webkit-box-shadow:0 1px 1px #fff;
 	box-shadow:0 1px 1px #fff;
 	}
-#main ul.widget_eme_list li p.calendar_icon:before{left:11px;}	
-#main ul.widget_eme_list li p.calendar_icon:after{right:11px;}
+#sidebar ul.widget_eme_list li p.calendar_icon:before{left:11px;}	
+#sidebar ul.widget_eme_list li p.calendar_icon:after{right:11px;}
 
-#main ul.widget_eme_list li p.calendar_icon em:before,
-#main ul.widget_eme_list li p.calendar_icon em:after{
+#sidebar ul.widget_eme_list li p.calendar_icon em:before,
+#sidebar ul.widget_eme_list li p.calendar_icon em:after{
 	content:'';
 	float:left;
 	position:absolute;
@@ -306,8 +310,8 @@ ul.widget_eme_list li{
 	-webkit-border-radius:2px;
 	border-radius:2px;
 	}
-#main ul.widget_eme_list li p.calendar_icon em:before{left:13px;}	
-#main ul.widget_eme_list li p.calendar_icon em:after{right:13px;}
+#sidebar ul.widget_eme_list li p.calendar_icon em:before{left:13px;}	
+#sidebar ul.widget_eme_list li p.calendar_icon em:after{right:13px;}
 
 /* Fine Widget Lista Eventi */
 
