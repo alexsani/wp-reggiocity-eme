@@ -313,6 +313,13 @@ table.eme-calendar-table td.eventful-post a:visited{
 #sidebar ul.widget_eme_list li p.calendar_icon em:before{left:13px;}	
 #sidebar ul.widget_eme_list li p.calendar_icon em:after{right:13px;}
 
+#sidebar ul.widget_eme_list li p.event_desc a,
+#sidebar ul.widget_eme_list li p.event_desc a:link,
+#sidebar ul.widget_eme_list li p.event_desc a:visited{
+    display: inline;
+    padding: 0;
+    }
+
 /* Fine Widget Lista Eventi */
 
 
