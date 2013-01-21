@@ -181,6 +181,17 @@ table.eme-calendar-table td.eventful-post a{
     color: #FD7E29;
 }
 
+table.eme-calendar-table td.eventful a:link,
+table.eme-calendar-table td.eventful a:visited,
+table.eme-calendar-table td.eventful-today a:link,
+table.eme-calendar-table td.eventful-today a:visited,
+table.eme-calendar-table td.eventful-post a:link,
+table.eme-calendar-table td.eventful-post a:visited{
+    padding: 0;
+    font-family:sans-serif;
+    display: inline;
+}
+
 .eme-calendar table tbody td.eventless-pre,
 .eme-calendar table tbody td.eventless-post,
 .eme-calendar table tbody td.eventfull-pre,
