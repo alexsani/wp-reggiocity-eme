@@ -8,17 +8,21 @@
  Author URI: 
  */
 
+add_action('admin_menu', 'remove_bresson_events_menu'); 
 add_action('wp_enqueue_scripts', 'reggiocityemestyle');
 add_action('admin_footer', 'reggiocityemejs');
 add_action('admin_footer', 'reggiocityemestyle');
 
-function reggiocityemestyle()
-{
- wp_register_style( 'reggiocity-eme-style', plugins_url('reggiocity-eme-style.css', __FILE__) );
- wp_enqueue_style( 'reggiocity-eme-style' );
+function remove_bresson_events_menu(){
+    remove_menu_page('edit.php?post_type=events');
 }
 
-function reggiocityemejs() {
+function reggiocityemestyle(){
+    wp_register_style( 'reggiocity-eme-style', plugins_url('reggiocity-eme-style.css', __FILE__) );
+    wp_enqueue_style( 'reggiocity-eme-style' );
+}
+
+function reggiocityemejs(){
     $url = plugins_url('reggiocity-eme-js.js', __FILE__);
     echo '"<script type="text/javascript" src="'. $url . '"></script>"';
 }
