@@ -39,10 +39,6 @@
     -moz-box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a;
     -webkit-box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a;
     box-shadow:inset 0 1px 0 #757575,inset 1px 0 0 #3a3a3a,inset -1px 0 0 #3a3a3a,inset 0 -1px 0 #3a3a3a}
-
-
-
-
     
 .eme-calendar ul,
 .eme-calendar-full ul{
@@ -58,7 +54,8 @@
     -moz-box-shadow:0 0 0 1px black,0 0 0 2px #3d3d3d,0 2px 0 0 #646464;
     box-shadow:0 0 0 1px black,0 0 0 2px #3d3d3d,0 2px 0 0 #646464;
     border-spacing:0;
-    border-collapse:collapse}
+    border-collapse:collapse;
+    table-layout: fixed;}
     
 .eme-calendar table thead,
 .eme-calendar-full table thead{
@@ -206,6 +203,10 @@ table.eme-calendar-table td.eventful-post a:visited{
 .eme-calendar-full .eme-calendar table tbody td.eventfull-post{
     font-weight: normal;
     color: #C8C8C8;
+}
+
+.sidebar ul .eme-calendar table tbody td a {
+    padding: 0;
 }
 
 /* Fine Calendario */
