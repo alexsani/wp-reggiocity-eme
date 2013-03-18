@@ -126,8 +126,10 @@
     
 .eme-calendar table tbody td.eventful,
 .eme-calendar table tbody td.eventful-post,
+.eme-calendar table tbody td.eventful-pre,
 .eme-calendar-full table tbody td.eventful,
-.eme-calendar-full table tbody td.eventful-post{
+.eme-calendar-full table tbody td.eventful-post,
+.eme-calendar-full table tbody td.eventful-pre{
     margin:-3px -10px ;
     text-decoration:none;
     color:#4c5359;
@@ -177,7 +179,8 @@
 
 table.eme-calendar-table td.eventful a,
 table.eme-calendar-table td.eventful-today a,
-table.eme-calendar-table td.eventful-post a{
+table.eme-calendar-table td.eventful-post a,
+table.eme-calendar-table td.eventful-pre a{
     font-weight: bold;
     color: #FD7E29;
 }
@@ -187,7 +190,9 @@ table.eme-calendar-table td.eventful a:visited,
 table.eme-calendar-table td.eventful-today a:link,
 table.eme-calendar-table td.eventful-today a:visited,
 table.eme-calendar-table td.eventful-post a:link,
-table.eme-calendar-table td.eventful-post a:visited{
+table.eme-calendar-table td.eventful-post a:visited,
+table.eme-calendar-table td.eventful-pre a:link,
+table.eme-calendar-table td.eventful-pre a:visited{
     padding: 0;
     font-family:sans-serif;
     display: inline;
